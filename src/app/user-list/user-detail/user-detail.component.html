@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" style="text-align: center;">ID</th>
+        <th scope="col" style="text-align: center;">Picture</th>
+        <th scope="col" style="text-align: center;">Name</th>
+        <th scope="col" style="text-align: center;">Bio</th>
+        <th scope="col" style="text-align: center;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr align="center">
+        <td scope="row">{{ user.id }}</td>
+        <td><img
+          [src]="user.profile_pic_url"
+          alt="{{ user.name }}"
+          class="img-responsive"
+          style="max-height: 100px;" width="50"></td>
+        <td><h3>{{ user.name }}</h3></td>
+        <td>{{ user.bio }}</td>
+        <td><a 
+          style="cursor: pointer;" 
+          [routerLink]="['/users/edit', user.id]"
+          >Edit User</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<router-outlet></router-outlet>

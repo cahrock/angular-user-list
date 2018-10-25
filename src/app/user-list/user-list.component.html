@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>{{title}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <a
+      style="cursor: pointer;"
+      routerLinkActive="active"
+      class="list-group-item clearfix"
+      *ngFor="let user of users"
+      [routerLink]="['/users/detail', user.id]"
+      >
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">User name: {{ user.name }}</h4>
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="user.profile_pic_url"
+          alt="{{ user.name }}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
+    </a>
+  </div>
+  <div class="col-md-7">
+      <router-outlet></router-outlet>
+  </div>
+  <div class="col-md-1"></div>
+</div>
