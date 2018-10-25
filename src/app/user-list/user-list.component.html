@@ -1,17 +1,17 @@
 <div class="row">
   <div class="col-md-12">
-    <h1>{{title}}</h1>
   </div>
 </div>
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-3">
+      
     <a
       style="cursor: pointer;"
       routerLinkActive="active"
       class="list-group-item clearfix"
       *ngFor="let user of users"
-      [routerLink]="['/users/detail', user.id]"
+      [routerLink]="['/users', user.id]"
       >
       <div class="pull-left">
         <h4 class="list-group-item-heading">User name: {{ user.name }}</h4>
@@ -30,3 +30,12 @@
   </div>
   <div class="col-md-1"></div>
 </div>
+
+<!-- <fieldset>
+    <legend>User List</legend>
+    <div *ngFor="let user of users">
+        <a [routerLink]="['/users', user.id]"><h3>{{user.name}}</h3></a>
+        <a [routerLink]="['/users', 'edit', user.id]"><img src="{{user.profile_pic_url}}" alt=""></a>
+    </div>
+    </fieldset>
+    <router-outlet></router-outlet> -->

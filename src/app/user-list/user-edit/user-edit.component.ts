@@ -14,7 +14,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
-  title = "Edit User Profile";
+  // title = "Edit User Profile";
   user: User; 
 
   constructor(

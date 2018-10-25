@@ -10,7 +10,7 @@ import { UserService } from './user.service';
 })
 export class UserListComponent implements OnInit {
   users: User[];
-  title = "List of Users"
+  // title = "List of Users"
 
   constructor(private userService: UserService) { }
 

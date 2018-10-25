@@ -29,9 +29,10 @@ export class UserDetailComponent implements OnInit {
   }
 
   onEditUser(): void {
-    this.route.params
-    .switchMap((params: Params) => this.userService.getDetail(+params['id']))
-    .subscribe(user => this.user = user)
+    this.router.navigate(['users', 'edit', this.user.id, ]);
+    // this.route.params
+    // .switchMap((params: Params) => this.userService.getDetail(+params['id']))
+    // .subscribe(user => this.user = user)
     // this.router.navigate([':id'], {relativeTo: this.route});
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }

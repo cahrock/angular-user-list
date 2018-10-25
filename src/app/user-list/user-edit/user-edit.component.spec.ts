@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterTestingModule } from '@angular/router/testing';
+import { UserService } from '../user.service';
 import { UserEditComponent } from './user-edit.component';
 
 describe('UserEditComponent', () => {
@@ -8,7 +11,9 @@ describe('UserEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserEditComponent ]
+      imports: [ RouterTestingModule, FormsModule, HttpModule ],
+      declarations: [ UserEditComponent],
+      providers:[UserService]
     })
     .compileComponents();
   }));
@@ -20,6 +25,13 @@ describe('UserEditComponent', () => {
   });
 
   it('should be created', () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(UserEditComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
   });
+  // it('should create the app', async(() => {
+  //   const fixture = TestBed.createComponent(UserEditComponent);
+  //   const app = fixture.debugElement.componentInstance;
+  //   expect(app).toBeTruthy();
+  // }));
 });

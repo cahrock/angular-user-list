@@ -9,9 +9,10 @@ import { UserListComponent } from './user-list/user-list.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'users',  component: UserListComponent, children: [
-      { path: 'detail/:id',  component: UserDetailComponent }
+      // { path: 'detail/:id',  component: UserDetailComponent }
+      { path: ':id',  component: UserDetailComponent }
   ] },
-  { path: 'users/edit/:id',  component: UserEditComponent },
+  { path: 'users/edit/:id',  component: UserEditComponent},
   ];
 
 @NgModule({
